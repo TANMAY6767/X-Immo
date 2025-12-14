@@ -19,7 +19,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home />;
+  return <Home onNavigate={setCurrentPage} />;
       case 'features':
         return <Features />;
       case 'how-it-works':
@@ -28,8 +28,8 @@ function App() {
         return <About />;
       case 'contact':
         return <Contact />;
-      default:
-        return <Home />;
+      case 'home':
+  return <Home onNavigate={setCurrentPage} />;
     }
   };
 

@@ -1,7 +1,9 @@
 import { Building2, Zap, Users, TrendingUp, Wrench, ChevronRight, Shield, BarChart, Clock, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-
-export const Home = () => {
+interface HomeProps {
+  onNavigate: (page: string) => void;
+}
+export const Home = ({ onNavigate }: HomeProps) => {
   const { t } = useLanguage();
 
   return (
@@ -37,13 +39,13 @@ export const Home = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 flex items-center justify-center">
+                <button onClick={() => onNavigate('contact')} className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 flex items-center justify-center">
                   {t.home.hero.cta.startTrial}
                   <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-md"></div>
                 </button>
                 
-                <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:border-blue-400 hover:text-blue-600 transition-all duration-300">
+                <button onClick={() => onNavigate('contact')} className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:border-blue-400 hover:text-blue-600 transition-all duration-300">
                   {t.home.hero.cta.scheduleDemo}
                 </button>
               </div>

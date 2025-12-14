@@ -47,18 +47,18 @@ export const Contact = () => {
   const info = [
     {
       icon: Mail,
-      title: "Email",
-      lines: ["contact@ximmo.com", "support@ximmo.com"],
+      title: t.contact.info.email.title,
+      lines: t.contact.info.email.lines
     },
     {
       icon: Phone,
-      title: "Phone",
-      lines: ["+1 (555) 123-4567", "Mon–Fri, 9am–6pm"],
+      title: t.contact.info.phone.title,
+      lines: t.contact.info.phone.lines
     },
     {
       icon: MapPin,
-      title: "Office",
-      lines: ["123 Property Street", "New York, USA"],
+      title: t.contact.info.office.title,
+      lines: t.contact.info.office.lines
     },
   ];
 
@@ -82,10 +82,10 @@ export const Contact = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
-          <Stat value={500} label="Happy Clients" />
-          <Stat value={99} label="Uptime %" />
-          <Stat value={24} label="Hour Response" />
-          <Stat value={10} label="K+ Properties" />
+          <Stat value={500} label={t.contact.stats.happyClients} />
+          <Stat value={99} label={t.contact.stats.uptime} />
+          <Stat value={24} label={t.contact.stats.hourResponse} />
+          <Stat value={10} label={t.contact.stats.properties} />
         </div>
 
         {/* Content */}
@@ -139,14 +139,14 @@ export const Contact = () => {
                   {t.contact.successMessage}
                 </h3>
                 <p className="text-sm text-gray-600 mt-1">
-                  We’ll get back within 24 hours.
+                  {t.contact.successNote}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="text-xs font-medium text-gray-600">
-                    Name
+                    {t.contact.namePlaceholder}
                   </label>
                   <input
                     type="text"
@@ -161,7 +161,7 @@ export const Contact = () => {
 
                 <div>
                   <label className="text-xs font-medium text-gray-600">
-                    Email
+                    {t.contact.emailPlaceholder}
                   </label>
                   <input
                     type="email"
@@ -176,7 +176,7 @@ export const Contact = () => {
 
                 <div>
                   <label className="text-xs font-medium text-gray-600">
-                    Message
+                    {t.contact.messagePlaceholder}
                   </label>
                   <textarea
                     name="message"
